@@ -10,7 +10,7 @@ import Products from './pages/Products'
 
 const App = () => {
   return (
-    <div>
+    <>
       <Router>
         <Switch>
           <Route exact path='/' component={Home}/>
@@ -20,7 +20,7 @@ const App = () => {
           <Route exact path='/products' component={Products}/>
         </Switch>
       </Router>
-    </div>
+    </>
   )
 }
 

@@ -20,7 +20,7 @@ const Register = () => {
   let user = true
   return (
     <RegisterPage>
-      <RegisterLogo>
+      <RegisterLogo to="/">
         ZAA'A
       </RegisterLogo>
       <RegisterBody>

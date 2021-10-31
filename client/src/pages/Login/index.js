@@ -20,7 +20,7 @@ const Login = () => {
   let user = true
   return (
     <LoginPage>
-      <LoginLogo>
+      <LoginLogo to="/">
         ZAA'A
       </LoginLogo>
       <LoginBody>
