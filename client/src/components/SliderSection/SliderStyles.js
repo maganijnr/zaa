@@ -3,81 +3,92 @@ import {Link as LinkL} from 'react-router-dom'
 
 
 const SliderContainer = styled.section`
-  width: 100%;
-  height: 80vh;
-  display: flex;
+  background: rgba(0,0,0,.8);
+  height: 100vh;
   position: relative;
-  overflow: hidden;
+  width: 100%;
 `
-
 const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: #fff7f7;
-  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 499;
+  left: ${(props) => props.direction === "left" && "5px"};
+  right: ${(props) => props.direction === "right" && "5px"};
+  color: #FFF;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: #000;
+  height: 30px;
+  width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
-  margin: auto;
-  cursor: pointer;
-  opacity: 0.5;
-  z-index: 2;
+  border-radius: 100%;
 `
 
 const SliderWrapper = styled.div`
   height: 100%;
+  width: 100%;
   display: flex;
-  transition: all 1.5s ease;
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
+  align-items: center;
+  overflow: hidden;
 `
 
 const Slide = styled.div`
-  width: 100vw;
-  height: 100vh;
+  min-width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: #000;
+  justify-content: center;
+  position: relative;
 `
 
 const ImageContainer = styled.div`
+  background-image: url(${({bgImg}) => bgImg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
   height: 100%;
-  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const Image = styled.img`
-  height: 80%;
+  /* height: 80%; */
 `;
 
 const SliderInfoContainer = styled.div`
-  flex: 1;
-  padding: 50px;
+  text-align: center;
+  padding: 25px 20px;
+  z-index: 399;
+  background: rgba(0,0,0,.8);
 `
 
 const InfoH2 = styled.h2`
-  font-size: 70px;
+  font-size: 50px;
   color: #fff;
+  margin-bottom: 1rem;
 `
 
 const InfoP = styled.p`
-  margin: 50px 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 3px;
   color: #fff;
+  margin-bottom: 1.5rem;
 `
 
 const InfoButton = styled(LinkL)`
-  padding: 10px;
-  font-size: 20px;
-  background-color: #FFF;
-  cursor: pointer;
+  background: #FFF;
   color: #000;
-
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 8px 10px;
+  margin-bottom: 1rem;
 `
 
 export {

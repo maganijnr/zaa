@@ -1,6 +1,4 @@
-import React, {useState} from 'react'
-
-
+import {useState} from 'react'
 import {BsArrowRightCircle, BsArrowLeftCircle} from 'react-icons/bs'
 import { sliders } from '../../data/homeData'
 import {
@@ -18,36 +16,53 @@ import {
 
 
 const SliderSection = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
-  const handleClick = (direction) => {
-    if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-    } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
-    }
-  };
+  const [current, setCurrent] = useState(0);
+  const length = sliders.length
 
-  setTimeout(handleClick, 5000);
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1)
+  }
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1)
+  }
+
+  console.log(current)
+  if(!Array.isArray(sliders) || sliders.length <= 0){
+    return null
+  }
+
+
   return (
     <SliderContainer>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
+      <Arrow direction="left" onClick={prevSlide}>
         <BsArrowLeftCircle/>
       </Arrow>
-      <SliderWrapper slideIndex={slideIndex}>
-        {sliders.map ((slide)=>(
-          <Slide key={slide.id}>
-            <ImageContainer>
-              <Image src={slide.bgImg} alt=""/>
-            </ImageContainer>
-            <SliderInfoContainer>
-              <InfoH2>{slide.infoH2}</InfoH2>
-              <InfoP>{slide.infoP}</InfoP>
-              <InfoButton to="/cart">{slide.btnTxt}</InfoButton>
-            </SliderInfoContainer>
-          </Slide>
-        ))}
+      <SliderWrapper>
+        {
+          sliders.map((slide, index) => {
+            return (
+              <Slide key={index}>
+                {
+                  index === current && (
+                    <>
+                      <ImageContainer bgImg={slide.bgImg}/>
+                      <SliderInfoContainer>
+                        <InfoH2>{slide.infoH2}</InfoH2>
+                        <InfoP>
+                          {slide.infoP}
+                        </InfoP>
+                        <InfoButton>{slide.btnTxt}</InfoButton>
+                      </SliderInfoContainer>
+                    </>
+                  )
+                }
+              </Slide>
+            )
+          })
+        }
       </SliderWrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
+      <Arrow direction="right" onClick={nextSlide}>
         <BsArrowRightCircle/>
       </Arrow>
     </SliderContainer>

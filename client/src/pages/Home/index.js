@@ -1,22 +1,184 @@
-import React from 'react'
-
-//components
-import Navbar from '../../components/Navbar'
-import CategorySection from '../../components/CategorySection'
-import SliderSection from '../../components/SliderSection'
-import ProductsSection from '../../components/ProductsSection'
-import NewsLetterSection from '../../components/NewsLetterSection'
-import FooterSection from '../../components/FooterSection'
+import SliderSection from "../../components/SliderSection"
 
 const Home = () => {
   return (
     <div>
-      <Navbar/>
       <SliderSection/>
-      <CategorySection/>
-      <ProductsSection/>
-      <NewsLetterSection/>
-      <FooterSection/>
+      <h2>
+        Hello world
+      </h2>
+       <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+      <h2>
+        Hello world
+      </h2>
+
     </div>
   )
 }

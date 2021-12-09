@@ -11,6 +11,7 @@ import {
   CategoryBtn
 } from './CategoryStyles'
 
+
 const CategorySection = () => {
   return (
     <CategoryContainer>

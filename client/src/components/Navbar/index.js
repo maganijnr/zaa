@@ -1,10 +1,12 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 
 import { 
   Nav,
   NavContainer,
   NavLogo,
+  NavMenuBtn,
+  NavMenuBtnWrapper,
   NavCart,
   NavCartWrap,
   CartBadge,
@@ -14,24 +16,43 @@ import {
   NavBtn
 } from './NavbarStyles'
 
-const Navbar = () => {
+const Navbar = ({toggleBar}) => {
+  const [scrollNav, setScrollNav] = useState(false)
+
+  const changeNav = () => {
+    if(window.scrollY >= 70){
+      setScrollNav(true)
+    }else{
+      setScrollNav(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav)
+  }, [])
+
   return (
-    <Nav>
+    <Nav scrollNav={scrollNav}>
       <NavContainer>
-        <NavLogo to="/">ZAA'A</NavLogo>
+        <NavLogo scrollNav={scrollNav} to="/">ZAA'A</NavLogo>
+        <Link scrollNav={scrollNav} to="/cart">
+          <NavCartWrap>
+            <NavCart scrollNav={scrollNav}/>
+            <CartBadge>
+              <CartH4 scrollNav={scrollNav}>6</CartH4>
+            </CartBadge>
+          </NavCartWrap>
+        </Link>
+        
+        <NavMenuBtnWrapper scrollNav={scrollNav} onClick={toggleBar}>
+          <NavMenuBtn />
+        </NavMenuBtnWrapper>
+
         <NavItems>
-          <Link to="/cart">
-            <NavCartWrap>
-              <NavCart/>
-              <CartBadge>
-                <CartH4>4</CartH4>
-              </CartBadge>
-            </NavCartWrap>
-          </Link>
-          <NavItem to="/">Home</NavItem>
-          <NavItem to="/products">Products</NavItem>
-          <NavItem to="/login">Login</NavItem>
-          <NavBtn to="/register">Register</NavBtn>
+          <NavItem scrollNav={scrollNav} to="/">Home</NavItem>
+          <NavItem scrollNav={scrollNav} to="/products">Products</NavItem>
+          <NavItem scrollNav={scrollNav} to="/login">Login</NavItem>
+          <NavBtn scrollNav={scrollNav} to="/register">Register</NavBtn>
         </NavItems>
       </NavContainer>
     </Nav>
